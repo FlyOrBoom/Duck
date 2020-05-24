@@ -71,6 +71,12 @@ input{
 @keyframes fade-in{
 	0%{opacity:0}
 }
+@media screen and (prefers-color-scheme:light){
+	body{
+		color:gray;
+		background:linear-gradient(black,hsl(60deg,100%,4%));
+	}
+}
 		</style>
 	</head>
 	<body>
@@ -129,6 +135,7 @@ $('#input').addEventListener('change',event=>{
 })
 $('#input').addEventListener('submit',event=>{
 	event.preventDefault()
+	$('#input-message').focus()
 	const input = $('#input-message').value
 	if (!input) return
 	latest_timestamp = event.timeStamp
