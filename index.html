@@ -3,6 +3,8 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Talk to Duck</title>
+		<meta name="author" content="Xing">
+		<meta name="description" content="Duck wants to help you!">
 		<style>
 html,body{
 	width:100%;
@@ -139,7 +141,7 @@ $('#input').addEventListener('submit',event=>{
 		.flat()]
 	const content = 'quack'.repeat(random_int(max=5))
 		+buzzwords[random_int(max=buzzwords.length-1)]
-		+'!?'[random_int()]
+		+['!','?'][random_int()]
 	setTimeout(()=>{
 		if (latest_timestamp === event.timeStamp) message('duck',content)
 	},(1<<7)+random_int(1<<8)+Math.log(content.length)*(1<<9)+Math.log(input.length)*(1<<10))
